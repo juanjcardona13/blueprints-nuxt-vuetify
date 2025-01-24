@@ -6,7 +6,10 @@ export default defineConfig({
   presets: [
     presetWind(),
     presetIcons({
-      /* options */
+      collections: {
+        mdi: () =>
+          import("@iconify-json/mdi/icons.json").then((i) => i.default),
+      },
     }),
   ],
 });
