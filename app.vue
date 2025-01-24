@@ -1,6 +1,13 @@
+<script setup>
+const { setLocale } = useI18n()
+</script>
+
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <div>
+      <button @click="setLocale('en')">en</button>
+      <button @click="setLocale('fr')">fr</button>
+      <p>{{ $t('welcome') }}</p>
+    </div>
   </div>
 </template>

@@ -5,5 +5,8 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
-  modules: ["@nuxt/eslint", "@unocss/nuxt"],
+  modules: ["@nuxt/eslint", "@unocss/nuxt", "@nuxtjs/i18n"],
+  i18n: {
+    vueI18n: './i18n.config.ts'
+  }
 });
