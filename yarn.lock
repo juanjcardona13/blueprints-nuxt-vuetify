@@ -1824,7 +1824,7 @@
   dependencies:
     "@unocss/core" "65.4.3"
 
-"@unocss/preset-icons@65.4.3":
+"@unocss/preset-icons@65.4.3", "@unocss/preset-icons@^65.4.3":
   version "65.4.3"
   resolved "https://registry.yarnpkg.com/@unocss/preset-icons/-/preset-icons-65.4.3.tgz#4f70bb43d7b06bc2101ba9320cd5e74858e4e67d"
   integrity sha512-g1WNamvYOIdD8YAOvZ5h4g3peel3rLTtKvB0wX4pVL5exsYsoyc0tmiGm57k+ZmnIucqSzxoUZ/vjHDLAViahw==

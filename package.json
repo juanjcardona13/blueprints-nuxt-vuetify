@@ -22,6 +22,7 @@
   "devDependencies": {
     "@nuxt/eslint": "^0.7.5",
     "@unocss/nuxt": "^65.4.3",
+    "@unocss/preset-icons": "^65.4.3",
     "@unocss/preset-wind": "^65.4.3",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
