@@ -12,3 +12,5 @@ services:
     volumes:
       - ../..:/src:delegated
       - node_modules:/src/node_modules
+    env_file:
+      - my-nuxt-app/.env
