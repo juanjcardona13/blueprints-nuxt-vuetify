@@ -1,0 +1,17 @@
+{
+  "name": "Nuxt App Project",
+  "dockerComposeFile": "../docker/local/docker-compose.yaml",
+  "service": "my-nuxt-app",
+  "workspaceFolder": "/src",
+  "runServices": ["my-nuxt-app"],
+  "customizations": {
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "vscode": {
+      "extensions": [
+        
+      ]
+    }
+  }
+}
