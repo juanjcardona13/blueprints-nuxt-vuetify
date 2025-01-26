@@ -9,9 +9,7 @@
       "terminal.integrated.shell.linux": "/bin/bash"
     },
     "vscode": {
-      "extensions": [
-        
-      ]
+      "extensions": []
     }
   }
 }
