@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@nuxtjs/i18n",
     "@nuxt/test-utils/module",
+    "@vueuse/nuxt",
   ],
   i18n: {
     vueI18n: "./i18n.config.ts",
