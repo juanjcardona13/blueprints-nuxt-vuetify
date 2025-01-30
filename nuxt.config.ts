@@ -8,13 +8,22 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxt/eslint",
-    "@unocss/nuxt",
-    "@nuxtjs/i18n",
     "@nuxt/test-utils/module",
+    "@nuxtjs/i18n",
+    "@nuxtjs/google-fonts",
+    "@unocss/nuxt",
     "@vueuse/nuxt",
+    "vuetify-nuxt-module",
   ],
   i18n: {
     vueI18n: "./i18n.config.ts",
+  },
+  googleFonts: {
+    families: {
+      'DM+Sans': {
+        wght: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      },
+    }
   },
   runtimeConfig: {
     public: {

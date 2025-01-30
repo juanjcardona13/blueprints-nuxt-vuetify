@@ -1,16 +1,7 @@
-<script setup>
-const { setLocale } = useI18n();
-const { $analytics } = useNuxtApp();
-$analytics.trackPageView();
-</script>
+<script setup></script>
 
 <template>
-  <div>
-    <div>
-      <button @click="setLocale('en')">en</button>
-      <button @click="setLocale('fr')">fr</button>
-      <p>{{ $t("welcome") }}</p>
-      <p>Docker Work and HR</p>
-    </div>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
