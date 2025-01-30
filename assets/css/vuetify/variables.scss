@@ -1,0 +1,389 @@
+$reference-unit: 8px;
+
+// #region ==== GRID
+// $grid-columns-override: 12;
+// $grid-gutter-override: $reference-unit * 3;
+// $grid-breakpoints-override: (
+//   xs: 0,
+//   // var(--v-breakpoint-xs, 0),
+//   sm: 576px,
+//   // var(--v-breakpoint-sm, 576px),
+//   md: 768px,
+//   // var(--v-breakpoint-md, 768px),
+//   lg: 992px,
+//   // var(--v-breakpoint-lg, 992px),
+//   xl: 1200px,
+//   // var(--v-breakpoint-xl, 1200px),
+//   xxl: 1400px, // var(--v-breakpoint-xxl, 1400px),
+// );
+// $spacer-override: $reference-unit * 0.5;
+// $container-padding-x-override: $reference-unit * 2;
+// $container-max-widths-override: (
+//   xs: var(--v-container-max-width-xs, 100%),
+//   sm: var(--v-container-max-width-sm, 540px),
+//   md: var(--v-container-max-width-md, 720px),
+//   lg: var(--v-container-max-width-lg, 960px),
+//   xl: var(--v-container-max-width-xl, 1140px),
+//   xxl: var(--v-container-max-width-xxl, 1320px),
+// );
+// #endregion
+
+// #region ==== COLORS
+// este se puede personalizar totalmente desde la propiedad "theme" de Vuetify
+// #endregion
+
+// #region ==== TYPOGRAPHY
+$body-font-family-override: var(--v-body-font-family, "ui-sans-serif");
+$heading-font-family-override: var(--v-heading-font-family, "ui-sans-serif");
+/*
+      Display L: no-tiene
+      ---------------------------
+      Display M: h1
+      ---------------------------
+      Display S: h2
+      ---------------------------
+      Headline L: h3
+      ---------------------------
+      Headline M: h4
+      ---------------------------
+      Headline S: h5
+      ---------------------------
+      Title L: h6
+      ---------------------------
+      Title M: subtitle-1
+      ---------------------------
+      Title S: subtitle-2
+      ---------------------------
+      Body L: body-1
+      ---------------------------
+      Body M: body-2
+      ---------------------------
+      Body S: caption
+      ---------------------------
+      Label L: button
+      ---------------------------
+      Label M: overline
+      ---------------------------
+      Label S: no-tiene
+      ---------------------------
+  */
+$typography-override: (
+  "h1": (
+    "size": var(--v-h1-font-size, 64px),
+    "weight": var(--v-h1-font-weight, 400),
+    "line-height": var(--v-h1-line-height, 52px !important),
+    "letter-spacing": var(--v-h1-letter-spacing, 0),
+    "font-family": var(--v-h1-font-family, $heading-font-family-override),
+    "text-transform": var(--v-h1-text-transform, none),
+  ),
+  "h2": (
+    "size": var(--v-h2-font-size, 48px),
+    "weight": var(--v-h2-font-weight, 400),
+    "line-height": var(--v-h2-line-height, 44px !important),
+    "letter-spacing": var(--v-h2-letter-spacing, 0),
+    "font-family": var(--v-h2-font-family, $heading-font-family-override),
+    "text-transform": var(--v-h2-text-transform, none),
+  ),
+  "h3": (
+    "size": var(--v-h3-font-size, 36px),
+    "weight": var(--v-h3-font-weight, 400),
+    "line-height": var(--v-h3-line-height, 40px !important),
+    "letter-spacing": var(--v-h3-letter-spacing, 0),
+    "font-family": var(--v-h3-font-family, $heading-font-family-override),
+    "text-transform": var(--v-h3-text-transform, none),
+  ),
+  "h4": (
+    "size": var(--v-h4-font-size, 32px),
+    "weight": var(--v-h4-font-weight, 400),
+    "line-height": var(--v-h4-line-height, 36px !important),
+    "letter-spacing": var(--v-h4-letter-spacing, 0),
+    "font-family": var(--v-h4-font-family, $heading-font-family-override),
+    "text-transform": var(--v-h4-text-transform, none),
+  ),
+  "h5": (
+    "size": var(--v-h5-font-size, 28px),
+    "weight": var(--v-h5-font-weight, 400),
+    "line-height": var(--v-h5-line-height, 32px !important),
+    "letter-spacing": var(--v-h5-letter-spacing, 0),
+    "font-family": var(--v-h5-font-family, $heading-font-family-override),
+    "text-transform": var(--v-h5-text-transform, none),
+  ),
+  "h6": (
+    "size": var(--v-h6-font-size, 24px),
+    "weight": var(--v-h6-font-weight, 400),
+    "line-height": var(--v-h6-line-height, 28px !important),
+    "letter-spacing": var(--v-h6-letter-spacing, 0),
+    "font-family": var(--v-h6-font-family, $heading-font-family-override),
+    "text-transform": var(--v-h6-text-transform, none),
+  ),
+  "subtitle-1": (
+    "size": var(--v-subtitle-1-font-size, 24px),
+    "weight": var(--v-subtitle-1-font-weight, 500),
+    "line-height": var(--v-subtitle-1-line-height, 24px !important),
+    "letter-spacing": var(--v-subtitle-1-letter-spacing, 0.15px),
+    "font-family": var(--v-subtitle-1-font-family, $body-font-family-override),
+    "text-transform": var(--v-subtitle-1-text-transform, none),
+  ),
+  "subtitle-2": (
+    "size": var(--v-subtitle-2-font-size, 20px),
+    "weight": var(--v-subtitle-2-font-weight, 500),
+    "line-height": var(--v-subtitle-2-line-height, 25px !important),
+    "letter-spacing": var(--v-subtitle-2-letter-spacing, 0.1px),
+    "font-family": var(--v-subtitle-2-font-family, $body-font-family-override),
+    "text-transform": var(--v-subtitle-2-text-transform, none),
+  ),
+  "body-1": (
+    "size": var(--v-body-1-font-size, 16px),
+    "weight": var(--v-body-1-font-weight, 400),
+    "line-height": var(--v-body-1-line-height, 24px !important),
+    "letter-spacing": var(--v-body-1-letter-spacing, 0.5px),
+    "font-family": var(--v-body-1-font-family, $body-font-family-override),
+    "text-transform": var(--v-body-1-text-transform, none),
+  ),
+  "body-2": (
+    "size": var(--v-body-2-font-size, 14px),
+    "weight": var(--v-body-2-font-weight, 400),
+    "line-height": var(--v-body-2-line-height, 25px !important),
+    "letter-spacing": var(--v-body-2-letter-spacing, 0.25px),
+    "font-family": var(--v-body-2-font-family, $body-font-family-override),
+    "text-transform": var(--v-body-2-text-transform, none),
+  ),
+  "caption": (
+    "size": var(--v-caption-font-size, 13px),
+    "weight": var(--v-caption-font-weight, 400),
+    "line-height": var(--v-caption-line-height, 15px !important),
+    "letter-spacing": var(--v-caption-letter-spacing, 0.14px),
+    "font-family": var(--v-caption-font-family, $body-font-family-override),
+    "text-transform": var(--v-caption-text-transform, none),
+  ),
+  "button": (
+    "size": var(--v-button-font-size, 20px),
+    "weight": var(--v-button-font-weight, 500),
+    "line-height": var(--v-button-line-height, 25px !important),
+    "letter-spacing": var(--v-button-letter-spacing, 0.1px),
+    "font-family": var(--v-button-font-family, $body-font-family-override),
+    "text-transform": var(--v-button-text-transform, none),
+  ),
+  "overline": (
+    "size": var(--v-overline-font-size, 13px),
+    "weight": var(--v-overline-font-weight, 500),
+    "line-height": var(--v-overline-line-height, 15px !important),
+    "letter-spacing": var(--v-overline-letter-spacing, 0.5px),
+    "font-family": var(--v-overline-font-family, $body-font-family-override),
+    "text-transform": var(--v-overline-text-transform, none),
+  ),
+  "12": (
+    "size": 12px,
+    "weight": 400,
+    "line-height": 15px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "13": (
+    "size": 13px,
+    "weight": 400,
+    "line-height": 15px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "16": (
+    "size": 16px,
+    "weight": 400,
+    "line-height": 20px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "20": (
+    "size": 20px,
+    "weight": 400,
+    "line-height": 25px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "24": (
+    "size": 24px,
+    "weight": 400,
+    "line-height": 25px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "28": (
+    "size": 28px,
+    "weight": 400,
+    "line-height": 30px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "32": (
+    "size": 32px,
+    "weight": 400,
+    "line-height": 35px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "36": (
+    "size": 36px,
+    "weight": 400,
+    "line-height": 30px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "40": (
+    "size": 40px,
+    "weight": 400,
+    "line-height": 52px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "48": (
+    "size": 48px,
+    "weight": 400,
+    "line-height": 52px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+  "64": (
+    "size": 64px,
+    "weight": 400,
+    "line-height": 52px,
+    "letter-spacing": -0.15px,
+    "font-family": $body-font-family-override,
+    "text-transform": none,
+  ),
+);
+
+$font-weights-override: (
+  "100": 100,
+  "200": 200,
+  "300": 300,
+  "400": 400,
+  "500": 500,
+  "600": 600,
+  "700": 700,
+  "800": 800,
+  "900": 900,
+);
+// #endregion
+
+// #region ==== ELEVATION
+$shadow-key-umbra-override: (
+  0: var(--v-umbra-0, (0px 0px 0px 0px rgba(0, 0, 0, 0.2))),
+  1: var(--v-umbra-1, (0px 2px 1px -1px rgba(0, 0, 0, 0.2))),
+  2: var(--v-umbra-2, (0px 3px 1px -2px rgba(0, 0, 0, 0.2))),
+  3: var(--v-umbra-3, (0px 3px 3px -2px rgba(0, 0, 0, 0.2))),
+  4: var(--v-umbra-4, (0px 2px 4px -1px rgba(0, 0, 0, 0.2))),
+  5: var(--v-umbra-5, (0px 3px 5px -1px rgba(0, 0, 0, 0.2))),
+  6: var(--v-umbra-6, (0px 3px 5px -1px rgba(0, 0, 0, 0.2))),
+  7: var(--v-umbra-7, (0px 4px 5px -2px rgba(0, 0, 0, 0.2))),
+  8: var(--v-umbra-8, (0px 5px 5px -3px rgba(0, 0, 0, 0.2))),
+  9: var(--v-umbra-9, (0px 5px 6px -3px rgba(0, 0, 0, 0.2))),
+  10: var(--v-umbra-10, (0px 6px 6px -3px rgba(0, 0, 0, 0.2))),
+  11: var(--v-umbra-11, (0px 6px 7px -4px rgba(0, 0, 0, 0.2))),
+  12: var(--v-umbra-12, (0px 7px 8px -4px rgba(0, 0, 0, 0.2))),
+  13: var(--v-umbra-13, (0px 7px 8px -4px rgba(0, 0, 0, 0.2))),
+  14: var(--v-umbra-14, (0px 7px 9px -4px rgba(0, 0, 0, 0.2))),
+  15: var(--v-umbra-15, (0px 8px 9px -5px rgba(0, 0, 0, 0.2))),
+  16: var(--v-umbra-16, (0px 8px 10px -5px rgba(0, 0, 0, 0.2))),
+  17: var(--v-umbra-17, (0px 8px 11px -5px rgba(0, 0, 0, 0.2))),
+  18: var(--v-umbra-18, (0px 9px 11px -5px rgba(0, 0, 0, 0.2))),
+  19: var(--v-umbra-19, (0px 9px 12px -6px rgba(0, 0, 0, 0.2))),
+  20: var(--v-umbra-20, (0px 10px 13px -6px rgba(0, 0, 0, 0.2))),
+  21: var(--v-umbra-21, (0px 10px 13px -6px rgba(0, 0, 0, 0.2))),
+  22: var(--v-umbra-22, (0px 10px 14px -6px rgba(0, 0, 0, 0.2))),
+  23: var(--v-umbra-23, (0px 11px 14px -7px rgba(0, 0, 0, 0.2))),
+  24: var(--v-umbra-24, (0px 11px 15px -7px rgba(0, 0, 0, 0.2))),
+);
+$shadow-key-penumbra-override: (
+  0: var(--v-penumbra-0, (0px 0px 0px 0px rgba(0, 0, 0, 0.14))),
+  1: var(--v-penumbra-1, (0px 1px 1px 0px rgba(0, 0, 0, 0.14))),
+  2: var(--v-penumbra-2, (0px 2px 2px 0px rgba(0, 0, 0, 0.14))),
+  3: var(--v-penumbra-3, (0px 3px 4px 0px rgba(0, 0, 0, 0.14))),
+  4: var(--v-penumbra-4, (0px 4px 5px 0px rgba(0, 0, 0, 0.14))),
+  5: var(--v-penumbra-5, (0px 5px 8px 0px rgba(0, 0, 0, 0.14))),
+  6: var(--v-penumbra-6, (0px 6px 10px 0px rgba(0, 0, 0, 0.14))),
+  7: var(--v-penumbra-7, (0px 7px 10px 1px rgba(0, 0, 0, 0.14))),
+  8: var(--v-penumbra-8, (0px 8px 10px 1px rgba(0, 0, 0, 0.14))),
+  9: var(--v-penumbra-9, (0px 9px 12px 1px rgba(0, 0, 0, 0.14))),
+  10: var(--v-penumbra-10, (0px 10px 14px 1px rgba(0, 0, 0, 0.14))),
+  11: var(--v-penumbra-11, (0px 11px 15px 1px rgba(0, 0, 0, 0.14))),
+  12: var(--v-penumbra-12, (0px 12px 17px 2px rgba(0, 0, 0, 0.14))),
+  13: var(--v-penumbra-13, (0px 13px 19px 2px rgba(0, 0, 0, 0.14))),
+  14: var(--v-penumbra-14, (0px 14px 21px 2px rgba(0, 0, 0, 0.14))),
+  15: var(--v-penumbra-15, (0px 15px 22px 2px rgba(0, 0, 0, 0.14))),
+  16: var(--v-penumbra-16, (0px 16px 24px 2px rgba(0, 0, 0, 0.14))),
+  17: var(--v-penumbra-17, (0px 17px 26px 2px rgba(0, 0, 0, 0.14))),
+  18: var(--v-penumbra-18, (0px 18px 28px 2px rgba(0, 0, 0, 0.14))),
+  19: var(--v-penumbra-19, (0px 19px 29px 2px rgba(0, 0, 0, 0.14))),
+  20: var(--v-penumbra-20, (0px 20px 31px 3px rgba(0, 0, 0, 0.14))),
+  21: var(--v-penumbra-21, (0px 21px 33px 3px rgba(0, 0, 0, 0.14))),
+  22: var(--v-penumbra-22, (0px 22px 35px 3px rgba(0, 0, 0, 0.14))),
+  23: var(--v-penumbra-23, (0px 23px 36px 3px rgba(0, 0, 0, 0.14))),
+  24: var(--v-penumbra-24, (0px 24px 38px 3px rgba(0, 0, 0, 0.14))),
+);
+$shadow-key-ambient-override: (
+  0: var(--v-ambient-0, (0px 0px 0px 0px rgba(0, 0, 0, 0.12))),
+  1: var(--v-ambient-1, (0px 1px 3px 0px rgba(0, 0, 0, 0.12))),
+  2: var(--v-ambient-2, (0px 1px 5px 0px rgba(0, 0, 0, 0.12))),
+  3: var(--v-ambient-3, (0px 1px 8px 0px rgba(0, 0, 0, 0.12))),
+  4: var(--v-ambient-4, (0px 1px 10px 0px rgba(0, 0, 0, 0.12))),
+  5: var(--v-ambient-5, (0px 1px 14px 0px rgba(0, 0, 0, 0.12))),
+  6: var(--v-ambient-6, (0px 1px 18px 0px rgba(0, 0, 0, 0.12))),
+  7: var(--v-ambient-7, (0px 2px 16px 1px rgba(0, 0, 0, 0.12))),
+  8: var(--v-ambient-8, (0px 3px 14px 2px rgba(0, 0, 0, 0.12))),
+  9: var(--v-ambient-9, (0px 3px 16px 2px rgba(0, 0, 0, 0.12))),
+  10: var(--v-ambient-10, (0px 4px 18px 3px rgba(0, 0, 0, 0.12))),
+  11: var(--v-ambient-11, (0px 4px 20px 3px rgba(0, 0, 0, 0.12))),
+  12: var(--v-ambient-12, (0px 5px 22px 4px rgba(0, 0, 0, 0.12))),
+  13: var(--v-ambient-13, (0px 5px 24px 4px rgba(0, 0, 0, 0.12))),
+  14: var(--v-ambient-14, (0px 5px 26px 4px rgba(0, 0, 0, 0.12))),
+  15: var(--v-ambient-15, (0px 6px 28px 5px rgba(0, 0, 0, 0.12))),
+  16: var(--v-ambient-16, (0px 6px 30px 5px rgba(0, 0, 0, 0.12))),
+  17: var(--v-ambient-17, (0px 6px 32px 5px rgba(0, 0, 0, 0.12))),
+  18: var(--v-ambient-18, (0px 7px 34px 6px rgba(0, 0, 0, 0.12))),
+  19: var(--v-ambient-19, (0px 7px 36px 6px rgba(0, 0, 0, 0.12))),
+  20: var(--v-ambient-20, (0px 8px 38px 7px rgba(0, 0, 0, 0.12))),
+  21: var(--v-ambient-21, (0px 8px 40px 7px rgba(0, 0, 0, 0.12))),
+  22: var(--v-ambient-22, (0px 8px 42px 7px rgba(0, 0, 0, 0.12))),
+  23: var(--v-ambient-23, (0px 9px 44px 8px rgba(0, 0, 0, 0.12))),
+  24: var(--v-ambient-24, (0px 9px 46px 8px rgba(0, 0, 0, 0.12))),
+);
+// #endregion
+
+// #region ==== BORDER & BORDER RADIUS
+$border-color-root-override: rgba(var(--v-border-color), var(--v-border-opacity));
+$border-style-root-override: var(--v-border-style, solid);
+
+$borders-override: (
+  0: var(--v-border-width-0, 0),
+  null: var(--v-border-width-base, thin),
+  xs: var(--v-border-width-xs, 0.5px),
+  sm: var(--v-border-width-sm, 1px),
+  md: var(--v-border-width-md, 2px),
+  lg: var(--v-border-width-lg, 4px),
+  xl: var(--v-border-width-xl, 8px),
+);
+
+$border-radius-root-override: 8px; //var(--v-border-radius, 8px);
+$rounded-override: (
+  0: var(--v-border-radius-0, 0),
+  xs: var(--v-border-radius-xs, 5px),
+  sm: var(--v-border-radius-sm, 10px),
+  md: var(--v-border-radius-md, 12px),
+  null: var(--v-border-radius-base, 0),
+  lg: var(--v-border-radius-lg, 15px),
+  xl: var(--v-border-radius-xl, 20px),
+  pill: var(--v-border-radius-pill, 500px),
+  circle: var(--v-border-radius-circle, 50%),
+  shaped: var(--v-border-radius-shaped, 4px 0),
+);
+// #endregion
