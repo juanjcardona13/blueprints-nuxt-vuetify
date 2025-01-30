@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+const mode = useColorMode()
+</script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <VThemeProvider :theme="mode">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </VThemeProvider>
 </template>
