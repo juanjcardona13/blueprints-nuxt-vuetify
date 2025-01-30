@@ -40,8 +40,9 @@ export const shadcn: Blueprint = {
       dark: {
         dark: true,
         colors: {
-          primary: "#0EA5E9",
-          background: "rgba(0, 0, 0, 0.05)",
+          primary: "#FAFAFA",
+          background: "#18181b",
+          error: "#DC2626",
         },
       },
     },
