@@ -1,47 +1,117 @@
 <template>
-  <VContainer fluid class="d-flex justify-center align-center fill-height bg-surface">
-    <VCard class="pa-6 rounded-lg bg-background" elevation="1" width="450" :border="'sm'">
-      <h2 class="font-weight-bold text-h5 mb-4">To Do App</h2>
+  <VContainer
+    fluid
+    class="d-flex justify-center align-center fill-height bg-surface"
+  >
+    <VCard
+      class="pa-6 rounded-lg bg-background"
+      elevation="1"
+      width="450"
+      :border="'sm'"
+    >
+      <h2 class="font-weight-bold text-h5 mb-4">
+        {{ $t("welcome") }}
+      </h2>
 
       <!-- Campo para agregar tarea -->
       <div class="d-flex align-center">
-        <VTextField v-model="newTask" variant="outlined" placeholder="Enter your task" density="comfortable"
-          hide-details class="flex-grow-1" />
-        <VBtn color="primary" variant="flat" class="ml-2" prepend-icon="heroicons:plus" @click="addTask" text="Add"/>
+        <VTextField
+          v-model="newTask"
+          variant="outlined"
+          placeholder="Enter your task"
+          density="comfortable"
+          hide-details
+          class="flex-grow-1"
+        />
+        <VBtn
+          color="primary"
+          variant="flat"
+          class="ms-2"
+          prepend-icon="heroicons:plus"
+          text="Add"
+          @click="addTask"
+        />
       </div>
 
       <VDivider class="my-4" />
 
-      <h3 class="text-body-1 mb-2 opacity-50"></h3>
       <VList bg-color="transparent" class="mb-4">
-        <VListSubheader>
-          Your tasks
-        </VListSubheader>
-        <VListItem v-for="(task, index) in tasks" :key="index" variant="tonal" :base-color="taskClasses(task)" class="mb-3 rounded-pill">
+        <VListSubheader> Your tasks </VListSubheader>
+        <VListItem
+          v-for="(task, index) in tasks"
+          :key="index"
+          variant="tonal"
+          :base-color="taskClasses(task)"
+          class="mb-3 rounded-pill"
+        >
           <template #prepend>
-            <VCheckbox density="compact" v-model="task.completed" color="background" base-color="background" hide-details class="mr-2" />
+            <VCheckbox
+              v-model="task.completed"
+              density="compact"
+              color="background"
+              base-color="background"
+              hide-details
+              class="me-2"
+            />
           </template>
-          <span class="text-body-1 font-weight-medium" :class="{ 'text-decoration-line-through text-success': task.completed }">
+          <span
+            class="text-body-1 font-weight-medium"
+            :class="{
+              'text-decoration-line-through text-success': task.completed,
+            }"
+          >
             {{ task.name }}
           </span>
           <template #append>
-            <VChip v-if="task.due && !task.completed" color="error" size="small" variant="tonal" rounded="pill" class="ml-3">
+            <VChip
+              v-if="task.due && !task.completed"
+              color="error"
+              size="small"
+              variant="tonal"
+              rounded="pill"
+              class="ms-3"
+            >
               Due date
             </VChip>
             <template v-else-if="!task.completed">
               <template v-if="false">
-                <VBtn class="mr-2" :icon="true" variant="flat" size="x-small" density="comfortable" @click="editTask(index)" >
-                  <VIcon color="primary" icon="mdi:pencil" size="12"/>
+                <VBtn
+                  class="me-2"
+                  :icon="true"
+                  variant="flat"
+                  size="x-small"
+                  density="comfortable"
+                  @click="editTask(index)"
+                >
+                  <VIcon color="primary" icon="mdi:pencil" size="12" />
                 </VBtn>
-                <VBtn :icon="true" variant="flat" size="x-small" density="comfortable" @click="removeTask(index)" >
-                  <VIcon color="error" icon="mdi:close" size="12"/>
+                <VBtn
+                  :icon="true"
+                  variant="flat"
+                  size="x-small"
+                  density="comfortable"
+                  @click="removeTask(index)"
+                >
+                  <VIcon color="error" icon="mdi:close" size="12" />
                 </VBtn>
               </template>
 
               <template v-if="true">
-                <VBtn class="mr-1" variant="flat" color="primary" size="small"  @click="editTask(index)" text="Edit"/>
-                <VBtn variant="flat" color="error" size="small"  @click="removeTask(index)" text="Delete"/>
-                  
+                <VBtn
+                  class="me-1"
+                  variant="flat"
+                  color="primary"
+                  size="small"
+                  text="Edit"
+                  @click="editTask(index)"
+                />
+                <VBtn
+                  variant="flat"
+                  color="error"
+                  size="small"
+                  text="Delete"
+                  @click="removeTask(index)"
+                />
               </template>
             </template>
           </template>
@@ -94,7 +164,7 @@ const taskClasses = (task: Task) => {
   } else {
     return "primary";
   }
-}
+};
 </script>
 
 <style scoped>
