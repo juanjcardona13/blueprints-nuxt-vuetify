@@ -1,11 +1,16 @@
-import en from "./locales/en.json";
-import fr from "./locales/fr.json";
+// i18n.config.ts
+import ar from "~/locales/ar";
+import en from "~/locales/en";
+import es from "~/locales/es";
 
-export default defineI18nConfig(() => ({
-  legacy: false,
-  locale: "en",
-  messages: {
-    en,
-    fr,
-  },
-}));
+export default defineI18nConfig(() => {
+  return {
+    legacy: false,
+    locale: "en",
+    messages: {
+      en,
+      es,
+      ar,
+    },
+  };
+});

@@ -17,6 +17,22 @@ export default defineNuxtConfig({
     "vuetify-nuxt-module",
   ],
   i18n: {
+    locales: [
+      {
+        code: "en",
+        name: "English",
+      },
+      {
+        code: "es",
+        name: "Español",
+      },
+      {
+        code: "ar",
+        name: "العربية",
+        dir: "rtl",
+      },
+    ],
+    strategy: "no_prefix",
     vueI18n: "./i18n.config.ts",
   },
   googleFonts: {
@@ -24,9 +40,9 @@ export default defineNuxtConfig({
       "DM+Sans": {
         wght: [100, 200, 300, 400, 500, 600, 700, 800, 900],
       },
-      "Roboto": {
+      Roboto: {
         wght: [100, 200, 300, 400, 500, 700, 900],
-      }
+      },
     },
   },
   vuetify: {

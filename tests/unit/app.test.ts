@@ -16,7 +16,7 @@ describe("Mounting app with `@nuxtjs/i18n`", () => {
   });
   it("can change the locale", async () => {
     const component = await mountSuspended(App, { route: "/" });
-    await component.vm.$i18n.setLocale("fr");
-    expect(component.html()).toContain("Bienvenue dans l'application");
+    await component.vm.$i18n.setLocale("es");
+    expect(component.html()).toContain("Bienvenido a la aplicación");
   });
 });

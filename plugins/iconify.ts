@@ -20,7 +20,9 @@ export default defineNuxtPlugin((nuxtApp) => {
         heroicons: iconify("heroicons"),
         tabler: iconify("tabler"),
         "simple-icons": iconify("simple-icons"),
-        "mdi": iconify("mdi"),
+        mdi: iconify("mdi"),
+        flag: iconify("flag"),
+        "circle-flags": iconify("circle-flags"),
       },
       aliases: {
         collapse: "mdi:chevron-up",
