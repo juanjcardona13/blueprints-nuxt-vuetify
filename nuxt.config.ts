@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
+  css: ['@/assets/css/vuetify/globals.scss'],
   modules: [
     "@nuxt/eslint",
     "@nuxt/test-utils/module",
@@ -23,6 +24,14 @@ export default defineNuxtConfig({
       'DM+Sans': {
         wght: [100, 200, 300, 400, 500, 600, 700, 800, 900],
       },
+    }
+  },
+  vuetify: {
+    moduleOptions: {
+      disableVuetifyStyles: true,
+      styles: {
+        configFile: '/assets/css/vuetify/components.scss',
+      }
     }
   },
   runtimeConfig: {
