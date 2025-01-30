@@ -30,7 +30,7 @@ export const shadcn: Blueprint = {
           background: "#FFF",
         },
         variables: {
-          "rounded-pill": "0px",
+          "rounded-pill": "4px",
           "body-font-family":
             "ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
           "heading-font-family":
