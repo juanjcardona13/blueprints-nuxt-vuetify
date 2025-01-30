@@ -360,7 +360,10 @@ $shadow-key-ambient-override: (
 // #endregion
 
 // #region ==== BORDER & BORDER RADIUS
-$border-color-root-override: rgba(var(--v-border-color), var(--v-border-opacity));
+$border-color-root-override: rgba(
+  var(--v-border-color),
+  var(--v-border-opacity)
+);
 $border-style-root-override: var(--v-border-style, solid);
 
 $borders-override: (

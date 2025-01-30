@@ -13,6 +13,9 @@ RUN apt-get update -y && \
     rm -rf /var/cache/apk/* && \
     rm -rf /var/lib/apt/lists/*
 
+
+RUN npx -y playwright@1.50.0 install --with-deps
+
 # Build
 FROM base AS build
 

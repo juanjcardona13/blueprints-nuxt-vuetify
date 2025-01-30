@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["mixpanel", "pageview", "posthog"]
+  "cSpell.words": ["mixpanel", "pageview", "posthog"],
+  "workbench.colorTheme": "Default Dark+"
 }
