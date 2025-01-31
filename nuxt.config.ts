@@ -17,6 +17,13 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "vuetify-nuxt-module",
   ],
+  imports: {
+    dirs: [
+      "graphql/schema_cruddals",
+      "graphql/schema_custom",
+      "graphql/types"
+    ],
+  },
   i18n: {
     locales: [
       {

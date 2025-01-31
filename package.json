@@ -11,8 +11,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "test": "vitest run"
+    "test": "vitest run",
+    "generate-gql-types": "graphql-code-generator --config codegen.ts",
+    "postinstall": "nuxt prepare && npm run generate-gql-types"
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "3.2.0",
@@ -31,10 +32,12 @@
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
   "devDependencies": {
     "@iconify/vue": "^4.3.0",
+    "@graphql-codegen/cli": "^5.0.4",
     "@iconify-json/mdi": "^1.2.3",
     "@nuxt/eslint": "^0.7.5",
     "@nuxt/test-utils": "^3.15.4",
     "@nuxtjs/apollo": "^5.0.0-alpha.14",
+    "@parcel/watcher": "^2.5.1",
     "@types/mixpanel-browser": "^2.51.0",
     "@unocss/nuxt": "^65.4.3",
     "@unocss/preset-icons": "^65.4.3",

@@ -1,0 +1,412 @@
+
+#region ============= AUTH
+
+#region ============= PERMISSION
+
+query readPermission($where: FilterPermissionInput! ) {
+    readPermission(where: $where ) {
+        id
+    }
+}
+
+query searchPermissions($where: FilterPermissionInput $orderBy: OrderByPermissionInput $paginationConfig: PaginationConfigInput ) {
+    searchPermissions(where: $where orderBy: $orderBy paginationConfig: $paginationConfig ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStart
+        indexEnd
+        objects {
+            id
+        }
+    }
+}
+
+mutation createPermissions($input: [CreatePermissionInput!]! ) {
+    createPermissions(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updatePermissions($input: [UpdatePermissionInput!]! ) {
+    updatePermissions(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deletePermissions($where: FilterPermissionInput! ) {
+    deletePermissions(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivatePermissions($where: FilterPermissionInput! ) {
+    deactivatePermissions(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activatePermissions($where: FilterPermissionInput! ) {
+    activatePermissions(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+#region ============= GROUP
+
+query readGroup($where: FilterGroupInput! ) {
+    readGroup(where: $where ) {
+        id
+    }
+}
+
+query searchGroups($where: FilterGroupInput $orderBy: OrderByGroupInput $paginationConfig: PaginationConfigInput ) {
+    searchGroups(where: $where orderBy: $orderBy paginationConfig: $paginationConfig ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStart
+        indexEnd
+        objects {
+            id
+        }
+    }
+}
+
+mutation createGroups($input: [CreateGroupInput!]! ) {
+    createGroups(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateGroups($input: [UpdateGroupInput!]! ) {
+    updateGroups(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteGroups($where: FilterGroupInput! ) {
+    deleteGroups(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateGroups($where: FilterGroupInput! ) {
+    deactivateGroups(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateGroups($where: FilterGroupInput! ) {
+    activateGroups(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+#region ============= USER
+
+query readUser($where: FilterUserInput! ) {
+    readUser(where: $where ) {
+        id
+    }
+}
+
+query searchUsers($where: FilterUserInput $orderBy: OrderByUserInput $paginationConfig: PaginationConfigInput ) {
+    searchUsers(where: $where orderBy: $orderBy paginationConfig: $paginationConfig ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStart
+        indexEnd
+        objects {
+            id
+        }
+    }
+}
+
+mutation createUsers($input: [CreateUserInput!]! ) {
+    createUsers(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateUsers($input: [UpdateUserInput!]! ) {
+    updateUsers(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteUsers($where: FilterUserInput! ) {
+    deleteUsers(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateUsers($where: FilterUserInput! ) {
+    deactivateUsers(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateUsers($where: FilterUserInput! ) {
+    activateUsers(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+#endregion
+
+#region ============= TODO
+
+#region ============= TASK
+
+query readTask($where: FilterTaskInput! ) {
+    readTask(where: $where ) {
+        id
+    }
+}
+
+query searchTasks($where: FilterTaskInput $orderBy: OrderByTaskInput $paginationConfig: PaginationConfigInput ) {
+    searchTasks(where: $where orderBy: $orderBy paginationConfig: $paginationConfig ) {
+        total
+        page
+        pages
+        hasNext
+        hasPrev
+        indexStart
+        indexEnd
+        objects {
+            id
+        }
+    }
+}
+
+mutation createTasks($input: [CreateTaskInput!]! ) {
+    createTasks(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation updateTasks($input: [UpdateTaskInput!]! ) {
+    updateTasks(input: $input ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deleteTasks($where: FilterTaskInput! ) {
+    deleteTasks(where: $where ) {
+        success
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation deactivateTasks($where: FilterTaskInput! ) {
+    deactivateTasks(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+mutation activateTasks($where: FilterTaskInput! ) {
+    activateTasks(where: $where ) {
+        objects {
+            id
+        }
+        errorsReport {
+            objectPosition
+            errors {
+                field
+                messages
+            }
+        }
+    }
+}
+
+#endregion
+
+#endregion

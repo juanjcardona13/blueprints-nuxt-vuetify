@@ -130,6 +130,9 @@ interface Task {
   due: boolean;
 }
 
+const { data } = await useAsyncQuery(searchTasks());
+console.log("====>", data)
+
 const newTask = ref("");
 const tasks = ref<Task[]>([
   { name: "Learn Vuetify", completed: false, due: false },
