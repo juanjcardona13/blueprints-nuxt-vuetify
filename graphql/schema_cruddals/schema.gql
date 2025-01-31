@@ -1,12 +1,28 @@
 type Query {
   readTask(where: FilterTaskInput!): TaskType
-  searchTasks(where: FilterTaskInput, orderBy: OrderByTaskInput, paginationConfig: PaginationConfigInput): TaskPaginatedType
+  searchTasks(
+    where: FilterTaskInput
+    orderBy: OrderByTaskInput
+    paginationConfig: PaginationConfigInput
+  ): TaskPaginatedType
   readUser(where: FilterUserInput!): UserType
-  searchUsers(where: FilterUserInput, orderBy: OrderByUserInput, paginationConfig: PaginationConfigInput): UserPaginatedType
+  searchUsers(
+    where: FilterUserInput
+    orderBy: OrderByUserInput
+    paginationConfig: PaginationConfigInput
+  ): UserPaginatedType
   readGroup(where: FilterGroupInput!): GroupType
-  searchGroups(where: FilterGroupInput, orderBy: OrderByGroupInput, paginationConfig: PaginationConfigInput): GroupPaginatedType
+  searchGroups(
+    where: FilterGroupInput
+    orderBy: OrderByGroupInput
+    paginationConfig: PaginationConfigInput
+  ): GroupPaginatedType
   readPermission(where: FilterPermissionInput!): PermissionType
-  searchPermissions(where: FilterPermissionInput, orderBy: OrderByPermissionInput, paginationConfig: PaginationConfigInput): PermissionPaginatedType
+  searchPermissions(
+    where: FilterPermissionInput
+    orderBy: OrderByPermissionInput
+    paginationConfig: PaginationConfigInput
+  ): PermissionPaginatedType
 }
 
 type TaskType {
@@ -137,7 +153,9 @@ type TaskPaginatedType implements PaginationInterface {
   indexEnd: Int
 }
 
-"""Defines a GraphQL Interface for pagination-related attributes."""
+"""
+Defines a GraphQL Interface for pagination-related attributes.
+"""
 interface PaginationInterface {
   total: Int
   page: Int
@@ -172,7 +190,9 @@ input PaginationConfigInput {
   itemsPerPage: IntOrAll = "All"
 }
 
-"""The page size can be int or 'All'"""
+"""
+The page size can be int or 'All'
+"""
 scalar IntOrAll
 
 type UserType {
@@ -185,13 +205,17 @@ type UserType {
   """
   isSuperuser: Boolean
 
-  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  """
+  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+  """
   username: String!
   firstName: String
   lastName: String
   email: Email
 
-  """Designates whether the user can log into this admin site."""
+  """
+  Designates whether the user can log into this admin site.
+  """
   isStaff: Boolean
 
   """
@@ -203,10 +227,20 @@ type UserType {
   """
   The groups this user belongs to. A user will get all permissions granted to each of their groups.
   """
-  paginatedGroups(where: FilterGroupInput, orderBy: OrderByGroupInput, paginationConfig: PaginationConfigInput): GroupPaginatedType
+  paginatedGroups(
+    where: FilterGroupInput
+    orderBy: OrderByGroupInput
+    paginationConfig: PaginationConfigInput
+  ): GroupPaginatedType
 
-  """Specific permissions for this user."""
-  paginatedUserPermissions(where: FilterPermissionInput, orderBy: OrderByPermissionInput, paginationConfig: PaginationConfigInput): PermissionPaginatedType
+  """
+  Specific permissions for this user.
+  """
+  paginatedUserPermissions(
+    where: FilterPermissionInput
+    orderBy: OrderByPermissionInput
+    paginationConfig: PaginationConfigInput
+  ): PermissionPaginatedType
 }
 
 """
@@ -230,12 +264,20 @@ type GroupPaginatedType implements PaginationInterface {
 type GroupType {
   id: ID
   name: String!
-  paginatedPermissions(where: FilterPermissionInput, orderBy: OrderByPermissionInput, paginationConfig: PaginationConfigInput): PermissionPaginatedType
+  paginatedPermissions(
+    where: FilterPermissionInput
+    orderBy: OrderByPermissionInput
+    paginationConfig: PaginationConfigInput
+  ): PermissionPaginatedType
 
   """
   The groups this user belongs to. A user will get all permissions granted to each of their groups.
   """
-  paginatedUser(where: FilterUserInput, orderBy: OrderByUserInput, paginationConfig: PaginationConfigInput): UserPaginatedType
+  paginatedUser(
+    where: FilterUserInput
+    orderBy: OrderByUserInput
+    paginationConfig: PaginationConfigInput
+  ): UserPaginatedType
 }
 
 type PermissionPaginatedType implements PaginationInterface {
@@ -253,10 +295,20 @@ type PermissionType {
   id: ID
   name: String!
   codename: String!
-  paginatedGroup(where: FilterGroupInput, orderBy: OrderByGroupInput, paginationConfig: PaginationConfigInput): GroupPaginatedType
+  paginatedGroup(
+    where: FilterGroupInput
+    orderBy: OrderByGroupInput
+    paginationConfig: PaginationConfigInput
+  ): GroupPaginatedType
 
-  """Specific permissions for this user."""
-  paginatedUser(where: FilterUserInput, orderBy: OrderByUserInput, paginationConfig: PaginationConfigInput): UserPaginatedType
+  """
+  Specific permissions for this user.
+  """
+  paginatedUser(
+    where: FilterUserInput
+    orderBy: OrderByUserInput
+    paginationConfig: PaginationConfigInput
+  ): UserPaginatedType
 }
 
 input FilterGroupInput {
@@ -374,7 +426,9 @@ type Mutation {
   createPermissions(input: [CreatePermissionInput!]!): CreatePermissionsPayload
   updatePermissions(input: [UpdatePermissionInput!]!): UpdatePermissionsPayload
   deletePermissions(where: FilterPermissionInput!): DeletePermissionsPayload
-  deactivatePermissions(where: FilterPermissionInput!): DeactivatePermissionsPayload
+  deactivatePermissions(
+    where: FilterPermissionInput!
+  ): DeactivatePermissionsPayload
   activatePermissions(where: FilterPermissionInput!): ActivatePermissionsPayload
 }
 
@@ -398,7 +452,9 @@ type ErrorCollectionType {
   errors: [ErrorType]
 }
 
-"""Represents an error type with a field and a list of error messages."""
+"""
+Represents an error type with a field and a list of error messages.
+"""
 type ErrorType {
   field: String!
   messages: [String!]!
@@ -450,13 +506,17 @@ input CreateUserInput {
   """
   isSuperuser: Boolean = false
 
-  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  """
+  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+  """
   username: String!
   firstName: String
   lastName: String
   email: Email
 
-  """Designates whether the user can log into this admin site."""
+  """
+  Designates whether the user can log into this admin site.
+  """
   isStaff: Boolean = false
 
   """
@@ -470,7 +530,9 @@ input CreateUserInput {
   """
   groups: [ID]
 
-  """Specific permissions for this user."""
+  """
+  Specific permissions for this user.
+  """
   userPermissions: [ID]
 }
 
@@ -489,13 +551,17 @@ input UpdateUserInput {
   """
   isSuperuser: Boolean
 
-  """Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."""
+  """
+  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+  """
   username: String
   firstName: String
   lastName: String
   email: Email
 
-  """Designates whether the user can log into this admin site."""
+  """
+  Designates whether the user can log into this admin site.
+  """
   isStaff: Boolean
 
   """
@@ -509,7 +575,9 @@ input UpdateUserInput {
   """
   groups: [ID]
 
-  """Specific permissions for this user."""
+  """
+  Specific permissions for this user.
+  """
   userPermissions: [ID]
 }
 

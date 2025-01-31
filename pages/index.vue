@@ -131,7 +131,7 @@ interface Task {
 }
 
 const { data } = await useAsyncQuery(searchTasks());
-console.log("====>", data)
+console.log("====>", data);
 
 const newTask = ref("");
 const tasks = ref<Task[]>([

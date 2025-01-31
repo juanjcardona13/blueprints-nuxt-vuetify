@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
     "@nuxt/test-utils/module",
-    '@nuxtjs/apollo',
+    "@nuxtjs/apollo",
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@unocss/nuxt",
@@ -18,11 +18,7 @@ export default defineNuxtConfig({
     "vuetify-nuxt-module",
   ],
   imports: {
-    dirs: [
-      "graphql/schema_cruddals",
-      "graphql/schema_custom",
-      "graphql/types"
-    ],
+    dirs: ["graphql/schema_cruddals", "graphql/schema_custom", "graphql/types"],
   },
   i18n: {
     locales: [
@@ -64,8 +60,8 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: 'http://localhost:8000/graphql',
-      }
+        httpEndpoint: "http://localhost:8000/graphql",
+      },
     },
   },
   runtimeConfig: {
