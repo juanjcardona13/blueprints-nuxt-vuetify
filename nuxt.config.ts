@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
     "@nuxt/test-utils/module",
+    '@nuxtjs/apollo',
     "@nuxtjs/i18n",
     "@nuxtjs/google-fonts",
     "@unocss/nuxt",
@@ -51,6 +52,13 @@ export default defineNuxtConfig({
       styles: {
         configFile: "/assets/css/vuetify/components.scss",
       },
+    },
+  },
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'http://localhost:8000/graphql',
+      }
     },
   },
   runtimeConfig: {
