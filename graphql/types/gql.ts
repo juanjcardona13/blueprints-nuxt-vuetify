@@ -18,7 +18,13 @@ const documents = [];
 export function graphql(source: string): unknown;
 
 export function graphql(source: string) {
-  return (documents as any)[source] ?? {};
+  interface Documents {
+    [key: string]: DocumentNode<any, any>;
+  }
+
+  const documents: Documents = {};
+
+  return documents[source] ?? {};
 }
 
 export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =

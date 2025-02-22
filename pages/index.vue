@@ -60,7 +60,7 @@
               'text-decoration-line-through text-success': task.completed,
             }"
           >
-            {{ task.name }}
+            {{ task.title }}
           </span>
           <template #append>
             <VChip
@@ -125,33 +125,41 @@
 import { ref } from "vue";
 
 interface Task {
-  name: string;
+  title: string;
   completed: boolean;
   due: boolean;
 }
 
-const { data } = await useAsyncQuery(searchTasks());
+const { data } = await useAsyncQuery<{ searchTasks: { objects: Task[] } }>(
+  searchTasks(`id title completed`),
+);
 console.log("====>", data);
-
+const taskDefault = [
+  { title: "Learn Vuetify", completed: false, due: false },
+  { title: "Developing in Nuxt", completed: true, due: false },
+  { title: "Install Pinia", completed: false, due: false },
+  { title: "Study Vue.js", completed: false, due: true },
+];
 const newTask = ref("");
-const tasks = ref<Task[]>([
-  { name: "Learn Vuetify", completed: false, due: false },
-  { name: "Developing in Nuxt", completed: true, due: false },
-  { name: "Install Pinia", completed: false, due: false },
-  { name: "Study Vue.js", completed: false, due: true },
-]);
+const tasks = computed<Task[]>(() => {
+  if (data) {
+    return data.value?.searchTasks?.objects as Task[];
+  } else {
+    return taskDefault;
+  }
+});
 
 const addTask = () => {
   if (newTask.value.trim()) {
-    tasks.value.push({ name: newTask.value, completed: false, due: false });
+    tasks.value.push({ title: newTask.value, completed: false, due: false });
     newTask.value = "";
   }
 };
 
 const editTask = (index: number) => {
-  const editedTask = prompt("Edit task:", tasks.value[index].name);
+  const editedTask = prompt("Edit task:", tasks.value[index].title);
   if (editedTask !== null) {
-    tasks.value[index].name = editedTask;
+    tasks.value[index].title = editedTask;
   }
 };
 

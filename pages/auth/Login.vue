@@ -12,7 +12,7 @@
       <!-- Icono superior y Títulos -->
       <div class="text-center mb-4">
         <VIcon icon="heroicons:lock-closed" size="32" />
-        <h2 class="font-weight-bold text-h5 mt-4 mb-1">Welcome back</h2>
+        <h2 class="font-weight-bold text-h5 mt-4 mb-1">{{ $t("welcome") }}</h2>
         <p class="text-body-1">
           <span class="opacity-50">Don't have an account? </span>
           <RouterLink
@@ -104,6 +104,7 @@ const showPassword = ref(false);
 
 const login = () => {
   console.log("Logging in:", user.value);
+  useRouter().push("/");
 };
 </script>
 
